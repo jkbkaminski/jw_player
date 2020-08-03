@@ -11,37 +11,35 @@
 <script type="text/JavaScript">
 
     const player = jwplayer('myElement').setup({
-        autostart: true,
-        localization: {
-            loadingAd: 'Laster annonse',
-            close: 'Lukk',
-            related: 'Flere videoer',
-        },
         advertising: {
-            admessage: 'Videoen starter om xx',
-            adscheduleid: '1VRHwE0L',
-            client: 'googima',
-            cuetext: 'Annonse',
+            admessage: "Videoen starter om xx",
+            adscheduleid: "1VRHwE0L",
+            client: "googima",
+            cuetext: "Annonse",
             preloadAds: false,
             rules: {
-                startOnSeek: 'pre',
-                timeBetweenAds: 0,
+            startOnSeek: "pre",
+            timeBetweenAds: 0
             },
             schedule: [],
-            skipmessage: 'Skip ad in xx seconds',
+            skipmessage: "Skip ad in xx seconds",
             vpaidcontrols: false,
-            vpaidmode: 'enabled',
+            vpaidmode: "enabled"
         },
+        autostart: true,
+        localization: {
+            close: "Lukk",
+            loadingAd: "Laster annonse",
+            related: "Flere videoer"
+        },
+        playlist: "//content.jwplatform.com/v2/media/JXkk5T7B",
         related: {
-            file: 'https://video-ws.startsiden.no/rest/RelatedPlaylist?related_media_id=MEDIAID',
-            displayMode: 'shelf',
-            autoplaytimer: 10,
-            onclick: 'play',
-            oncomplete: 'autoplay',
-            shouldAutoAdvance: false,
-            showButton: true,
-        },
-        playlist: '//content.jwplatform.com/v2/media/JXkk5T7B',
+            autoplaytimer: 5,
+            displayMode: "overlay",
+            file: "https://cdn.jwplayer.com/v2/playlists/wX4k4GlO?related_media_id=MEDIAID",
+            onclick: "play",
+            oncomplete: "autoplay"
+        }
     });
     player.on('ready', () => {
         player.on('relatedReady', () => {
